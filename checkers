@@ -1,0 +1,81 @@
+function setup() {
+  createCanvas(800, 800);
+}
+
+function draw() {
+  background(220);
+//Making the first loop for the first 2 rows: checkers and the board itself
+    let x = 100
+    let y = 0
+    let s = 100
+    let x1 = 150
+    let y1 = 50
+    let dia = 75
+    for (let i = 0; i < 8; i++){
+      fill('black')
+      square(x,y,s)
+      fill('red')
+      circle (x1,y1,dia)
+      x = x + 200
+      x1 = x1 + 200
+      if (x >= 800){
+          y = y + 100
+          y1 = y1 + 100
+          x = 0
+          x1 = 50
+    }
+    
+  }
+// Second loop 
+    let a = 100
+    let b = 200
+    let c = 100
+    for (let i = 0; i < 8; i++){
+      fill('black')
+      square(a,b,c)
+      a = a + 200
+      if (a >= 800){
+          b = b + 100
+          a = 0
+    }
+    
+  }
+// Third Loop     
+    let d = 100
+    let e = 400
+    let f = 100
+    for (let i = 0; i < 8; i++){
+      fill('black')
+      square(d,e,f)
+      d = d + 200
+      if (d >= 800){
+          e = e + 100
+          d = 0
+    }
+    
+  }
+// Fourth Loop
+    let l = 100
+    let m = 600
+    let n = 100
+    let x2 = 150
+    let y2 = 650
+    let dia1 = 75
+    for (let i = 0; i < 8; i++){
+      fill('black')
+      square(l,m,n)
+      fill('green')
+      circle(x2,y2,dia1)
+      l = l + 200
+      x2 = x2 + 200
+      if (l >= 800){
+          m = m + 100
+          y2 = y2 + 100
+          l = 0
+          x2 = 50
+    }
+    
+  }
+  
+}
+
