@@ -4,34 +4,34 @@ function setup() {
 
 function draw() {
   background('black');
-  // I tried to use the loop
-/*  
-    let x = 200
+
+    let x = 250
     let y = 200
     let dia = 250
     int (r = 255)
     int(g =255)
     int(b = 255)
     
-  for (i =0; i < 2; i++){
+  for (i =0; i < 3; i++){
     blendMode(LIGHTEST)
-    fill(r,g,b);
+    if (i == 0){
+          fill('red');
     circle(x,y,dia);
     x = x - 25
     y = y + 50
-  */  
+    }
+    if (i == 1){
+                fill('green');
+    circle(x,y,dia);
+      
+    }
+    if (i== 2){
+                fill('blue');
+        x = x - 25
+    y = y + 50
+    circle(x,y,dia);
+    }
     
-    let x = 250 
-    let y = 200
-    let dia = 250
-    blendMode(LIGHTEST)
-    fill('red');
-    circle(x,y,dia)
-  
-    fill('green');
-    circle(x-50,y+100,dia)
-  
-    fill('blue');
-    circle(x+50,y+100,dia)
-  
+
+  }
 }
