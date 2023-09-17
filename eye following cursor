@@ -3,9 +3,8 @@ let my = 1;
 // changed the easing to be more so the tracking of the ball is much more effective, than before
 let easing = 0.25;
 let radius = 24;
-// changed the edge to be 0 so it looks nicer
-let edge = 0;
-let inner = edge + radius;
+let edge = 100;
+let inner = edge + 4*(radius);
 
 function setup() {
   createCanvas(800, 400);
@@ -23,12 +22,12 @@ function draw() {
   if (abs(mouseY - my) > 0.1) {
     my = my + (mouseY - my) * easing;
   }
-  mx = constrain(mx, inner, width - inner);
-  my = constrain(my, inner, height - inner);
-  // changed the rectangle color to red
-  fill('red');
-  rect(edge, edge, width - edge, height - edge);
-  // changed the circle color to black
+  mx = constrain(mx, inner, width );
+  my = constrain(my, inner, height );
+  // changed the rectangle color to blue (eyes)
+  fill('blue');
+  circle(400,200,200)
+  // changed the pupil circle color to black
   fill('black');
   ellipse(mx, my, radius, radius);
 }
