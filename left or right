@@ -1,0 +1,23 @@
+
+function setup() {
+  createCanvas(720, 400);
+  noStroke();
+  rectMode(CENTER);
+}
+function draw() {
+  background(230);
+  if (mouseX > width / 2){
+        
+  stroke(20)
+      textSize(40);
+    text('right', 500,200)
+  }
+  else{
+    textSize(40);
+    stroke(20);
+    text('left',150,200)
+    
+  }
+    stroke(5);
+    line(360,0,360,400)
+}
