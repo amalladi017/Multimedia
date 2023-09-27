@@ -1,0 +1,46 @@
+let blob
+// Got this blob function from google and was able to make changes to to it.
+
+function setup() {
+  createCanvas(200, 200);
+  blob = new Blob(100, 100, 50);
+
+}
+
+function draw() {
+  background(0);
+  blob.show();
+
+
+}
+
+class Blob {
+
+  constructor(x, y, radius) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.yoff = 0.0;
+  }
+
+  show() {
+    fill('red')
+    push();
+    translate(this.x,this.y);
+    beginShape();
+    let xoff = 0;
+    for (let a = 0; a < TWO_PI; a += 0.1) {
+      let offset = map(noise(xoff, this.yoff), 0, 1, -25, 25);
+      let r = this.radius + offset;
+      let x = r * cos(a);
+      let y = r * sin(a);
+      vertex(x, y);
+      xoff += 0.1;
+      ellipse(x, y, 4, 4);
+    }
+    endShape();
+
+    this.yoff += 0.01;
+    pop();
+  }
+}
