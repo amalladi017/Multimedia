@@ -1,0 +1,23 @@
+
+// Im trying to add a image but for some reason it doesnt work. Then I try to loop it but I can't check if the loop works if the image isnt getting uploaded. 
+let newImg, graphicsCanvas;
+
+function setup() { 
+  createCanvas(600, 600);
+} 
+
+function draw() { 
+  for (let i=0; i<3; i++) {
+    newImg = loadImage(`Logo.png`, addImg);
+    image(newImg,0,0)
+  }
+}
+
+function addImg() {
+  graphicsCanvas = createGraphics(width, height);
+  graphicsCanvas.noStroke();
+  graphicsCanvas.fill(255);
+  graphicsCanvas.circle(random(500), height/2, 150);
+  newImg.mask(graphicsCanvas);
+  image(newImg, 0, 0);
+}
