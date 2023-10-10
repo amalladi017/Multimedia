@@ -1,0 +1,26 @@
+let xmove = 200
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background('white');
+  for (let i; i < 5; i++){
+  person(xmove)
+  xmove += 5
+   
+  }
+ 
+
+}
+function person(x){
+      ellipse(x,150,40)
+      stroke(10)
+      line(x,170,200,250)
+      line(x,250,140,330)
+      line(x,250,250,330)
+      line(x,210,150,200)
+      line(x,210,250,200)
+     
+  }
+// I wanted to make the perosn move by looping through the function and making the x values change so everything would move over one. I tried working with a pier on this. 
