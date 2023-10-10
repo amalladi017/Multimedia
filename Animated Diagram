@@ -1,0 +1,213 @@
+  let triangleX = 0;
+  let triangleY = 0;
+let triangleX1 = 0
+let triangleY1 = 800
+let fr = 30; 
+function setup() {
+  frameRate(fr);
+  createCanvas(800, 800);
+
+  
+}
+// https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40jilvanpinheiro%2Fsoftware-development-life-cycle-sdlc-phases-40d46afbe384&psig=AOvVaw3fnPLv9yaJRcdM2n8-xjA5&ust=1694187719676000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCIiE3ZvrmIEDFQAAAAAdAAAAABAE -- Link
+
+/*
+I have updated my Software developement cycle to have user interaction to it. If the user hovers over the steps it will display what the contents of what each step is. Its important for the users to go in order because starting from step 5 wouldnt make any sense. So starting from step 1, the user would start and the "step 1" would go away
+*/
+
+function draw() {
+
+  background(220);
+  textSize(20);
+  triangleX += 5;
+  triangleY += 5;
+  triangleY1 -= 5;
+  triangleX1 -=5;
+  text('Software Developement Cycle', 260 ,30);
+  // First Step is the Planning Stage (Plan out the start to finish of what we want)
+  fill('white')
+  square(75,50,200,20)
+  fill('black');
+  textSize(20);
+  text('1. PLANNING', 112, 130);
+  textSize(15);
+  text('Initial questions must be \n    answered to begin \n (Research & Roadmap)', 90, 170);
+  stroke(0);
+  if (mouseX >= 75 && mouseX <=275 && mouseY >=50 && mouseY <= 250){
+  }
+  else {
+  fill('white')
+  square(75,50,200,20)
+  fill('black');
+  textSize(30);
+  text(' STEP 1', 115, 155);
+
+
+  }
+  
+  
+  // Second Step is the Anaylsis (what we need)
+  fill('white')
+  square(75,300,200,20)
+  fill('black')
+  textSize(20);
+  text('2. ANALYSIS', 112, 390);
+  textSize(15);
+  text('Validity of research topics \n and incorporation in the \n              system', 90,420);
+    if (mouseX >= 75 && mouseX <=275 && mouseY >=300 && mouseY <= 500){
+  }
+  else {
+  fill('white')
+  square(75,300,200,20)
+  fill('black');
+  textSize(30);
+  text(' STEP 2', 115, 410);
+  }
+  stroke(0);
+  line(175,250,175,300)
+  
+  // Third Step is the Design phase (mock of design of what developers want)
+  fill('white')
+  square(75,550,200,20)
+  fill('black')
+  textSize(20);
+  text('3.   Design', 112, 640);
+  textSize(15);
+  text('Specifiying requirements \n    to help defnie overall \n            structure', 90,670);
+  stroke(0);
+  line(175,500,175,550)
+  if (mouseX >= 75 && mouseX <=275 && mouseY >=550 && mouseY <= 750){
+  }
+  else {
+  fill('white')
+  square(75,550,200,20)
+  fill('black');
+  textSize(30);
+  text(' STEP 3', 115, 655);
+  }
+  
+  
+  // Fourth Step is the Implentation of Code (putting everything into code)
+  stroke(0);
+  line(500,650,275,650)
+  fill('white')
+  square(500,550,200,20)
+  fill('black')
+  textSize(20);
+  text('4. Implmentation', 525, 640);
+  textSize(15);
+  text('Begin the developement \nof system design in code \n(Longest time spent here)', 520,670);
+  stroke(0);
+  line(600,550,600,475)
+  if (mouseX >= 500 && mouseX <=700 && mouseY >=550 && mouseY <= 750){
+  }
+  else {
+  fill('white')
+  square(500,550,200,20)
+  fill('black');
+  textSize(30);
+  text(' STEP 4', 535, 655);
+  }
+  
+  
+  // Fifth Step is deployment (releasing the project for customers use andfor beta testing)
+  fill('white')
+  square(500,300,200,20)
+  fill('black')
+  textSize(20);
+  text('5. Deployment', 530, 390);
+  textSize(15);
+  text('  After successful completion \n of testing, the project is then \n                 released', 505,420);
+  stroke(0);
+  line(600,250,600,300)
+    if (mouseX >= 500 && mouseX <=700 && mouseY >=300 && mouseY <= 500){
+  }
+  else {
+  fill('white')
+  square(500,300,200,20)
+  fill('black');
+  textSize(30);
+  text(' STEP 5', 535, 410);
+  }
+  
+  
+  
+  // Last and Final step is maintenance of the project (keeping the project up and tuning)
+  fill('white')
+  square(500,50,200,20)
+  fill('black');
+  textSize(20);
+  text('6. Maintenance', 535, 130);
+  textSize(15);
+  text(' Once the project is in use, \n maintenane is required to \n    keep the project up', 510, 170);
+  stroke(0);
+  line(275,150,500,150)
+  if (mouseX >= 500 && mouseX <=700 && mouseY >=50 && mouseY <= 250){
+  }
+  else {
+  fill('white')
+  square(500,50,200,20)
+  fill('black');
+  textSize(30);
+  text(' STEP 6', 535, 155);
+  }
+/*
+  if (triangleX >= width) {
+   // If you go off screen.
+    if (fr === 30) {
+      fr = 0;
+      frameRate(fr); // make frameRate 10 FPS
+    } else {
+      fr = 30;
+      frameRate(fr); // make frameRate 30 FPS
+    }
+    triangleX = 0;
+  }
+  if (triangleY >= height) {
+   // If you go off screen.
+    /*if (fr === 30) {
+      fr = 0;
+      frameRate(fr); // make frameRate 10 FPS
+    } else {
+      fr = 30;
+      frameRate(fr); // make frameRate 30 FPS
+    }
+    triangleY = 0;
+    
+  }
+if (triangleY1 >= height) {
+   // If you go off screen.
+    if (fr === 30) {
+      fr = 0;
+      frameRate(fr); // make frameRate 30 FPS
+    } else {
+
+        fr = 30;
+      frameRate(fr); // make frameRate 10 FPS
+    }
+        triangleY = 801;
+  }
+*/
+  triangle(triangleX, 775,triangleX, 800, triangleX+20 ,786);
+  triangle(0, triangleY,25, triangleY,12, triangleY+25);
+  triangle(775, triangleY1,800, triangleY1,785, triangleY1-25);
+  triangle(triangleX1+795,0,triangleX1+795,25,triangleX1+775,12)
+  
+
+
+
+  
+  /*
+  Once the last step is done, the cycle will then continue once again, thus why its called the Software Developement Cycle. This is what software engineers use while working on projects, universal for even the biggest of companies.
+  */
+  
+  
+  
+  
+  
+  
+  
+}
+
+
+  
