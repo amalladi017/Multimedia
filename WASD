@@ -1,0 +1,51 @@
+// Online code, where this function allows the keyboard to move the circle
+let fr = 5
+
+function setup() {
+  frameRate(fr)
+  createCanvas(400, 400);
+}
+
+x1 = 201
+y1 = 201
+direction = "NONE"
+
+function move() {
+  if (direction === "UP") {
+    y1 = y1 - 20
+  }
+  else if (direction === "DOWN") {
+    y1 = y1 + 20
+  }
+  else if (direction === "LEFT") {
+    x1 = x1 - 20
+  }
+  else if (direction === "RIGHT") {
+    x1 = x1 + 20
+  }
+}
+
+
+function draw() {
+  let c = color('#1cb82e')
+  background(0);
+  stroke(5);
+  line(x1,y1,5) //limbs
+  square(x1,y1,40,30);
+    fill(c);
+  move();
+}
+
+function keyPressed() {
+  var validKeys = [37,38,39,40]
+  var dict = {
+    37:"LEFT",
+    38:"UP",
+    39:"RIGHT",
+    40:"DOWN"
+  }
+  if (validKeys.includes(keyCode) === true) {
+    direction = dict[keyCode];
+  }
+  print(dict[keyCode])
+}
