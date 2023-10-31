@@ -1,0 +1,61 @@
+// chat gpt helped me make this. You type in the word and it gives how many words and the avg word length. 
+let inputText;
+let avgWordLength = 0;
+let totalWords = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  inputText = "Insert your text here. Press 'Calculate' to see the results.";
+  textSize(16);
+  textAlign(LEFT);
+  text(inputText, 10, 30);
+  noLoop();
+
+  let calculateButton = createButton("Calculate");
+  calculateButton.position(10, 360);
+  calculateButton.mousePressed(calculateWordLength);
+}
+
+function draw() {
+  background(220);
+
+  // Display the input text
+  textSize(16);
+  text(inputText, 10, 30);
+
+  // Display the results
+  textSize(18);
+  text(`Average Word Length: ${avgWordLength.toFixed(2)}`, 10, 180);
+  text(`Total Words: ${totalWords}`, 10, 220);
+
+  // Visualize the results with a bar chart
+  fill(100);
+  rect(10, 240, avgWordLength * 10, 20);
+}
+
+function calculateWordLength() {
+  let textArray = inputText.split(/\s+/);
+  totalWords = textArray.length;
+  let totalCharacters = 0;
+
+  for (let word of textArray) {
+    totalCharacters += word.length;
+  }
+
+  avgWordLength = totalCharacters / totalWords;
+  redraw(); // Redraw the canvas with the updated results
+}
+
+function keyPressed() {
+  if (keyCode === ENTER) {
+    calculateWordLength();
+  }
+}
+
+function mousePressed() {
+  if (mouseX >= 10 && mouseX <= 200 && mouseY >= 240 && mouseY <= 260) {
+    // Clicking on the bar chart
+    inputText = prompt("Enter new text:");
+    calculateWordLength();
+  }
+}
