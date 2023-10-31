@@ -1,0 +1,28 @@
+let textData;
+let words = [];
+
+function preload() {
+  textData = loadStrings('text_document.txt');
+}
+
+function setup() {
+  createCanvas(400, 400);
+  let textContent = textData.join(' ');
+  words = textContent.split(/\W+/).filter(word => word !== '');
+
+  displaySortedWords(words.sort(), 20, 'Sorted Alphabetically:');
+  displaySortedWords(words.sort((a, b) => a.length - b.length), 140, 'Sorted by Length:');
+  displaySortedWords(
+    words.sort((a, b) => words.filter(word => word === b).length - words.filter(word => word === a).length),
+    260,
+    'Sorted by Frequency:'
+  );
+}
+
+function displaySortedWords(sortedWords, y, label) {
+  textSize(16);
+  text(label, 20, y - 20);
+  for (let i = 0; i < min(10, sortedWords.length); i++) {
+    text(sortedWords[i], 20, y + i * 20);
+  }
+}
