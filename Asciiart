@@ -1,0 +1,22 @@
+let img;
+let aa;
+
+function setup() {
+  createCanvas(400, 400);
+  img = loadImage('image_file.jpg', () => {
+    aa = new AsciiArt(this);
+    aa.print(img, 80, ASCII);
+  });
+}
+
+function draw() {
+  background(255);
+  if (aa) {
+    aa.typeArray2D[0].forEach((row, y) => {
+      row.forEach((char, x) => {
+        textSize(10);
+        text(char, x * 10, y * 10);
+      });
+    });
+  }
+}
