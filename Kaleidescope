@@ -1,0 +1,35 @@
+let angle = 0;
+let numShapes = 6;
+let shapeSize = 50;
+
+function setup() {
+  createCanvas(400, 400);
+  angleMode(DEGREES);
+  noStroke();
+}
+
+function draw() {
+  background(255);
+  translate(width / 2, height / 2);
+
+  for (let i = 0; i < numShapes; i++) {
+    push();
+    rotate(angle + i * 360 / numShapes);
+
+    // Determine variations for each quadrant
+    if (i % 4 === 0) {
+      fill(255, 0, 0, 150); // Red
+    } else if (i % 4 === 1) {
+      fill(0, 255, 0, 150); // Green
+    } else if (i % 4 === 2) {
+      fill(0, 0, 255, 150); // Blue
+    } else {
+      fill(255, 255, 0, 150); // Yellow
+    }
+
+    ellipse(0, 0, shapeSize * 2);
+    pop();
+  }
+
+  angle += 1;
+}
