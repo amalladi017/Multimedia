@@ -1,0 +1,31 @@
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+  let cx = width / 2;
+  let cy = height / 2;
+  let depth = 100; 
+  
+  beginShape();
+  for (let i = 0; i < TWO_PI; i += TWO_PI / 5) {
+    let x1 = cx + cos(i) * depth;
+    let y1 = cy + sin(i) * depth;
+    vertex(x1, y1);
+    
+    let x2 = cx + cos(i + PI / 5) * depth;
+    let y2 = cy + sin(i + PI / 5) * depth;
+    vertex(x2, y2);
+  }
+  endShape(CLOSE);
+  
+beginShape();
+  for (let i = 0; i < TWO_PI; i += TWO_PI / 5) {
+    let x1 = cx + cos(i) * depth;
+    let y1 = cy + sin(i) * depth;
+    vertex(x1, y1);
+    
+    let x2 = cx + cos(i + PI / 5) * 50; 
+    let y2 = cy + sin(i + PI / 5) * 50; 
+    vertex(x2, y2);
+  }
+  endShape(CLOSE);
+}
