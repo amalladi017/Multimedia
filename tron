@@ -1,0 +1,31 @@
+// google and chat gpt helped me to create it.
+let camX = 0;
+let camY = 0;
+let camZ = 100;
+let speed = 2;
+
+function setup() {
+  createCanvas(400, 400, WEBGL);
+  angleMode(DEGREES);
+}
+
+function draw() {
+  background(0);
+  translate(0, 0, -100); // Center the landscape
+  
+  //Camera Movement
+  camX += speed;
+  camY += speed;
+  camera(camX, camY, camZ, 0, 0, 0, 0, 1, 0);
+  
+  // Tron-like landscape
+  for (let i = -200; i < 200; i += 20) {
+    for (let j = -200; j < 200; j += 20) {
+      push();
+      translate(i, j, 0);
+      stroke(0, 255, 0); // Neon green color
+      box(15, 15);
+      pop();
+    }
+  }
+}
