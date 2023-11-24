@@ -1,0 +1,69 @@
+let img;
+let imgs;
+let showFront = true;
+
+
+
+function preload() {
+  // Load the image before the sketch starts
+  img = loadImage('turkeytwo.jpg');
+  imgs = loadImage('family.jpg');
+}
+
+function setup() {
+  createCanvas(800, 400);
+  textAlign(CENTER, CENTER);
+}
+
+function draw() {
+  // Displays my front 
+  if (showFront) {
+      background(255);
+
+  fill(255, 215, 0);
+  noStroke();
+  rect(50, 50, width - 100, height - 100);
+
+
+  stroke(255, 165, 0); 
+  noFill();
+  strokeWeight(4);
+  rect(50, 50, width - 100, height - 100);
+
+
+  textSize(32);
+  fill('brown');
+  text("Happy Thanksgiving", width / 2, height / 2);
+  img.resize(100, 0);
+  image(img, width / 10 - img.width / 10, height / 3 - img.height / 3);
+  }
+  else {
+    // Display the back image
+    
+  background(255);
+
+  fill(255, 215, 0);
+  noStroke();
+  rect(50, 50, width - 100, height - 100);
+
+
+  stroke(255, 165, 0); 
+  noFill();
+  strokeWeight(4);
+  rect(50, 50, width - 100, height - 100);
+  imgs.resize(300, 0);
+  image(imgs, width / 10 - imgs.width / 10, height / 3 - imgs.height / 3);
+
+
+
+
+    textSize(30);
+    fill('brown'); // Orange text color
+    text("                                    I hope you have a wonderful\n            Thanksgiving \n               with your family!", width / 2, height / 2);    
+  }
+
+}
+function mousePressed() {
+  // You can swap between front and back through this
+  showFront = !showFront;
+}
