@@ -1,0 +1,101 @@
+let img;
+let img2;
+let img3;
+let top1Button;
+let homeButton;
+let showFront = true;
+let topic1 = false;
+let topic2 = false;
+let effectsNow = {
+  textEN:['Climate change has many impacts on health, enviroment, \nand society: \n - Air and water quality worsens which can significantly \neffect young children and the elderly.\n - Change in sea levels, railfall, and ecosystems, \ncan cause costly distruptions to society.\n - Drastic weather changes such as heat waves, \n droughts, and floods can affect agriculture.'],
+  textFI: ['Concentration of carbin dioxide will continue to increase \nin our atmosphere for the next hundred to thousands of \nyears. Leading to warmer weather with the clear \nincrease of risks we have to face in the future.'
+  ]
+}
+  
+  
+  
+  
+
+function preload() {
+  // Load the image before the sketch starts
+  img = loadImage('climate.jpg');
+  img2 = loadImage('climate2.jpg');
+  img3 = loadImage('climate3.png');
+}
+function setup() {
+  createCanvas(400, 400);
+
+  // Create the button once in the setup
+  top1Button = createButton("Present Impacts");
+  top1Button.position(50, 300);
+  top1Button.mousePressed(top1Screen);
+  
+  homeButton = createButton("Home");
+  homeButton.position(170,370);
+  homeButton.mousePressed(homeScreen);
+  
+  top2Button = createButton("Future Impacts");
+  top2Button.position(250, 300);
+  top2Button.mousePressed(top2Screen);
+}
+
+function draw() {
+  background(' grey');
+
+  if (topic1) {
+    // Hide the button when topic1 is true
+    top1Button.hide();
+    homeButton.show();
+    top2Button.hide();
+    fill('black');
+    textSize(15);
+    text(effectsNow.textEN[0],20,225)
+    img2.resize(300, 0);
+    image(img2, width / 5 - img2.width / 10, height / 5 - img2.height / 3);
+  } 
+  else if(showFront){
+    // Show the button when topic1 is false
+    top1Button.show();
+    homeButton.hide();
+    top2Button.show();
+    
+    fill('brown');
+    textSize(30)
+    text("Climate Change", 90,50);
+    img.resize(300, 0);
+    image(img, width / 5 - img.width / 10, height / 3 - img.height / 3);
+    
+  }
+  else if(topic2){
+    top1Button.hide();
+    homeButton.show();
+    top2Button.hide();
+    fill('black')
+    textSize(15);
+    text(effectsNow.textFI[0],20,225)
+    img3.resize(300, 0);
+    image(img3, width / 5 - img3.width / 10, height / 5 - img3.height / 3);
+  }
+}
+
+function top1Screen() {
+  // Toggle between front and back screens
+  topic1 = true;
+  showFront = !showFront;
+  topic2 = false;
+}
+function homeScreen() {
+  // Toggle between front and back screens
+  topic1 = false;
+  showFront = true;
+  topic2 = false;
+}
+function top2Screen() {
+  // Toggle between front and back screens
+  topic1 = false;
+  showFront = !showFront;
+  topic2 = true;
+}
+
+
+
